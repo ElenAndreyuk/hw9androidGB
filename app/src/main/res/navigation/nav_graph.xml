@@ -8,7 +8,6 @@
     <fragment
         android:id="@+id/StartFragment"
         android:name="ru.elenandreyuk.quizzbygb.StartFragment"
-        android:label="@string/start_fragment_label"
         tools:layout="@layout/fragment_start">
 
         <action
@@ -18,7 +17,6 @@
     <fragment
         android:id="@+id/QuestionsFragment"
         android:name="ru.elenandreyuk.quizzbygb.QuestionsFragment"
-        android:label="@string/questions_fragment_label"
         tools:layout="@layout/fragment_questions">
 
         <action
@@ -29,14 +27,13 @@
     <fragment
         android:id="@+id/ResultFragment"
         android:name="ru.elenandreyuk.quizzbygb.ResultFragment"
-        android:label="@string/result_fragment_label"
         tools:layout="@layout/fragment_result">
         <action
             android:id="@+id/action_ResultFragment_to_StartFragment"
             app:destination="@id/StartFragment"
             app:popUpTo="@id/StartFragment" />
 <!--        <argument-->
-<!--            android:name="correctAnswers"-->
+<!--            android:name="numbers"-->
 <!--            app:argType="integer" />-->
         <action
             android:id="@+id/action_ResultFragment_to_QuestionsFragment"
