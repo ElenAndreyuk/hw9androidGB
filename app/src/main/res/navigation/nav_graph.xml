@@ -18,6 +18,10 @@
         android:id="@+id/QuestionsFragment"
         android:name="ru.elenandreyuk.quizzbygb.QuestionsFragment"
         tools:layout="@layout/fragment_questions">
+        <argument
+            android:name="correctAnswersCount"
+            app:argType="integer" />
+
 
         <action
             android:id="@+id/action_QuestionsFragment_to_ResultFragment"
@@ -28,13 +32,14 @@
         android:id="@+id/ResultFragment"
         android:name="ru.elenandreyuk.quizzbygb.ResultFragment"
         tools:layout="@layout/fragment_result">
+        <argument
+            android:name="correctAnswersCount"
+            app:argType="integer" />
         <action
             android:id="@+id/action_ResultFragment_to_StartFragment"
             app:destination="@id/StartFragment"
             app:popUpTo="@id/StartFragment" />
-<!--        <argument-->
-<!--            android:name="numbers"-->
-<!--            app:argType="integer" />-->
+
         <action
             android:id="@+id/action_ResultFragment_to_QuestionsFragment"
             app:destination="@id/QuestionsFragment"
