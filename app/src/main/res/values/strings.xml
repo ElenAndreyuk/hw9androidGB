@@ -1,5 +1,48 @@
 <resources>
     <string name="app_name">quizz By GB</string>
     <string name="header">Quizz!</string>
-    <string name="buttonNext">Продолжить</string>
+    <string name="buttonNext">Начать</string>
+
+    <string name="headerQuestions">Опрос</string>
+
+    <string name="question1">Сколько раз в день нужно чистить зубы?</string>
+    <string name="answer1question1">1</string>
+    <string name="answer2question1">2</string>
+    <string name="answer3question1">5</string>
+
+    <string name="question2">С какого возраста нужно начинать детям чистить зубы?</string>
+    <string name="answer1question2">с 1 года</string>
+    <string name="answer2question2">с 2 лет</string>
+    <string name="answer3question2">с момента прорезывания первого зуба</string>
+
+    <string name="question3">С какой частотой нужно менять зубную щетку?</string>
+    <string name="answer1question3">1 раз в 2 месяца</string>
+    <string name="answer2question3">1 раз в 4 месяца</string>
+    <string name="answer3question3">по мере износа щетины</string>
+
+    <string name="question4">Нужно ли лечить молочные зубы?</string>
+    <string name="answer1question4">да</string>
+    <string name="answer2question4">нет</string>
+
+    <string name="question5">Всегда ли нужно удалять зубы мудрости?</string>
+    <string name="answer1question5">да</string>
+    <string name="answer2question5">нет</string>
+
+    <string name="back">Назад</string>
+
+    <string name="send">Отправить</string>
+    <string name="result">Результат:</string>
+    <string name="startAgain">Начать заново</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+        <string name="title_activity_navigation">NavigationActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="start_fragment_label">Start Fragment</string>
+    <string name="questions_fragment_label">Questions Fragment</string>
+    <string name="result_fragment_label">Results Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+
 </resources>
