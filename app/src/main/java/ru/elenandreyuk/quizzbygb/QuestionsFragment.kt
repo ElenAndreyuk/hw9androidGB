@@ -1,15 +1,15 @@
 package ru.elenandreyuk.quizzbygb
 
 import android.os.Bundle
+import android.transition.Slide
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.commit
-import androidx.fragment.app.replace
 import androidx.navigation.fragment.findNavController
 import ru.elenandreyuk.quizzbygb.databinding.FragmentQuestionsBinding
-import ru.elenandreyuk.quizzbygb.databinding.FragmentStartBinding
+
 
 
 class QuestionsFragment : Fragment() {
@@ -41,7 +41,10 @@ class QuestionsFragment : Fragment() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
+
+
     }
 
     override fun onCreateView(
@@ -53,8 +56,28 @@ class QuestionsFragment : Fragment() {
             parentFragmentManager.popBackStack()
 
         }
-        return inflater.inflate(R.layout.fragment_questions, container, false)
+        binding.headerQuestions.animate().apply {
+            duration = 3000
+            alpha(  1.0f)
+        }
+
+
+        return binding.root
     }
+
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//
+//        binding.buttonSend.setOnClickListener {
+//            val correctAnswers = calculateCorrectAnswers()
+//            val bundle = Bundle().apply {
+//                putInt("correctAnswersCount", correctAnswers)
+//            }
+//            findNavController().navigate(R.id.action_QuestionsFragment_to_ResultFragment, bundle)
+//        }
+//        requireActivity().window.enterTransition = Slide(Gravity.RIGHT)
+//        requireActivity().window.exitTransition = Slide(Gravity.RIGHT)
+//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -64,6 +87,11 @@ class QuestionsFragment : Fragment() {
             val bundle = Bundle().apply {
                 putInt("correctAnswersCount", correctAnswers)
             }
+            val transition = Slide(Gravity.RIGHT)
+            transition.duration = resources.getInteger(android.R.integer.config_longAnimTime).toLong()
+            enterTransition = transition
+            exitTransition = transition
+
             findNavController().navigate(R.id.action_QuestionsFragment_to_ResultFragment, bundle)
         }
     }

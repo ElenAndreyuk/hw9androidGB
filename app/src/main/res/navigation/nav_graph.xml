@@ -21,8 +21,6 @@
         <argument
             android:name="correctAnswersCount"
             app:argType="integer" />
-
-
         <action
             android:id="@+id/action_QuestionsFragment_to_ResultFragment"
             app:destination="@id/ResultFragment" />

@@ -12,16 +12,18 @@
         android:orientation="vertical">
 
         <!-- TODO: Update blank fragment layout -->
+
+
         <TextView
             android:id="@+id/header_questions"
             style="@style/Theme.QuizzByGB.Header"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/small_dimens"
+            android:alpha="0"
             android:padding="@dimen/small_dimens"
             android:text="@string/headerQuestions"
             android:theme="@style/Base.Theme.QuizzByGB" />
-
 
         <TextView
             android:id="@+id/question1"

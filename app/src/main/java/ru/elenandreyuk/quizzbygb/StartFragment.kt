@@ -1,7 +1,9 @@
 package ru.elenandreyuk.quizzbygb
 
 import android.os.Bundle
+import android.transition.Slide
 import android.util.Log
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -26,11 +28,15 @@ class StartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.buttonNext.setOnClickListener {
             try {
-                findNavController().navigate(R.id.action_QuestionsFragment_to_ResultFragment)
+                findNavController().navigate(R.id.action_StartFragment_to_QuestionsFragment)
             } catch (e: Exception) {
                 Log.e("Navigation", "Navigation failed: ${e.message}")
             }
         }
+        val transition = Slide(Gravity.RIGHT)
+        transition.duration = resources.getInteger(android.R.integer.config_longAnimTime).toLong()
+        enterTransition = transition
+        exitTransition = transition
     }
     override fun onDestroyView() {
         super.onDestroyView()

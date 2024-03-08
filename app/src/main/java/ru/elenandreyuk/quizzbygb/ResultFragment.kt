@@ -1,13 +1,20 @@
 package ru.elenandreyuk.quizzbygb
 
+import android.animation.ObjectAnimator
+import android.graphics.Color
 import android.os.Bundle
+import android.transition.Slide
+import android.view.Gravity
+import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.TextView
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
+import androidx.navigation.fragment.findNavController
 import ru.elenandreyuk.quizzbygb.databinding.FragmentResultBinding
 import ru.elenandreyuk.quizzbygb.databinding.FragmentStartBinding
 
@@ -34,11 +41,31 @@ class ResultFragment : Fragment() {
     ): View? {
         _binding = FragmentResultBinding.inflate(inflater)
         binding.buttonStartAgain.setOnClickListener{
-            parentFragmentManager.commit {
-                replace<StartFragment>(R.id.action_ResultFragment_to_StartFragment)
-            }
+            findNavController().navigate(R.id.action_ResultFragment_to_QuestionsFragment)
         }
-             return inflater.inflate(R.layout.fragment_result, container, false)
+ //Анимируем результат
+        ObjectAnimator.ofFloat(binding.result, View.ROTATION, 0f, 720f).apply {
+            duration = 4000
+            interpolator = AccelerateDecelerateInterpolator()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+            start()
+        }
+
+            // Анимируем цвета заголовка
+        ObjectAnimator.ofArgb(binding.resultText,
+            "textColor",
+            Color.parseColor("#00000000"),
+            Color.parseColor("#FFFFFFFF")).apply {
+                duration = 4000
+            repeatCount = ObjectAnimator.INFINITE
+            start()
+
+        }
+        requireActivity().window.enterTransition = Slide(Gravity.RIGHT)
+        requireActivity().window.exitTransition = Slide(Gravity.RIGHT)
+
+             return binding.root
     }
 
 
@@ -49,6 +76,11 @@ class ResultFragment : Fragment() {
 
         val resultTextView: TextView = view.findViewById(R.id.result)
         resultTextView.text = "Количество правильных ответов: $correctAnswersCount"
+        val transition = Slide(Gravity.RIGHT)
+        transition.duration = resources.getInteger(android.R.integer.config_longAnimTime).toLong()
+        enterTransition = transition
+        exitTransition = transition
+
     }
 
 
