@@ -11,9 +11,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- TODO: Update blank fragment layout -->
-
-
         <TextView
             android:id="@+id/header_questions"
             style="@style/Theme.QuizzByGB.Header"
@@ -205,7 +202,5 @@
             android:layout_marginTop="@dimen/large_dimens"
             android:padding="@dimen/small_dimens"
             android:text="@string/send" />
-
-
     </LinearLayout>
 </ScrollView>

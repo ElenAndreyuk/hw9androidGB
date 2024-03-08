@@ -10,8 +10,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import ru.elenandreyuk.quizzbygb.databinding.FragmentQuestionsBinding
 
-
-
 class QuestionsFragment : Fragment() {
     private var _binding: FragmentQuestionsBinding?  = null
     private val binding get () = _binding!!
@@ -54,30 +52,13 @@ class QuestionsFragment : Fragment() {
         _binding = FragmentQuestionsBinding.inflate(inflater)
         binding.buttonBack.setOnClickListener{
             parentFragmentManager.popBackStack()
-
         }
         binding.headerQuestions.animate().apply {
             duration = 3000
             alpha(  1.0f)
         }
-
-
         return binding.root
     }
-
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//        binding.buttonSend.setOnClickListener {
-//            val correctAnswers = calculateCorrectAnswers()
-//            val bundle = Bundle().apply {
-//                putInt("correctAnswersCount", correctAnswers)
-//            }
-//            findNavController().navigate(R.id.action_QuestionsFragment_to_ResultFragment, bundle)
-//        }
-//        requireActivity().window.enterTransition = Slide(Gravity.RIGHT)
-//        requireActivity().window.exitTransition = Slide(Gravity.RIGHT)
-//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -91,7 +72,6 @@ class QuestionsFragment : Fragment() {
             transition.duration = resources.getInteger(android.R.integer.config_longAnimTime).toLong()
             enterTransition = transition
             exitTransition = transition
-
             findNavController().navigate(R.id.action_QuestionsFragment_to_ResultFragment, bundle)
         }
     }
@@ -100,5 +80,4 @@ class QuestionsFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
-
 }

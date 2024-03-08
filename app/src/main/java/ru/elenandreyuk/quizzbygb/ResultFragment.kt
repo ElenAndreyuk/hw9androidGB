@@ -18,22 +18,9 @@ import androidx.navigation.fragment.findNavController
 import ru.elenandreyuk.quizzbygb.databinding.FragmentResultBinding
 import ru.elenandreyuk.quizzbygb.databinding.FragmentStartBinding
 
-// TODO: Rename parameter arguments, choose names that match
-//// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-//private const val ARG_PARAM1 = "param1"
-//private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ResultFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ResultFragment : Fragment() {
     private var _binding: FragmentResultBinding?  = null
     private val binding get () = _binding!!
-
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,7 +30,7 @@ class ResultFragment : Fragment() {
         binding.buttonStartAgain.setOnClickListener{
             findNavController().navigate(R.id.action_ResultFragment_to_QuestionsFragment)
         }
- //Анимируем результат
+            //Анимируем результат
         ObjectAnimator.ofFloat(binding.result, View.ROTATION, 0f, 720f).apply {
             duration = 4000
             interpolator = AccelerateDecelerateInterpolator()
@@ -53,12 +40,13 @@ class ResultFragment : Fragment() {
         }
 
             // Анимируем цвета заголовка
-        ObjectAnimator.ofArgb(binding.resultText,
+        ObjectAnimator.ofArgb(binding.resultHeader,
             "textColor",
             Color.parseColor("#00000000"),
             Color.parseColor("#FFFFFFFF")).apply {
                 duration = 4000
             repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
             start()
 
         }
@@ -75,13 +63,11 @@ class ResultFragment : Fragment() {
         val correctAnswersCount = arguments?.getInt("correctAnswersCount") ?: 0
 
         val resultTextView: TextView = view.findViewById(R.id.result)
-        resultTextView.text = "Количество правильных ответов: $correctAnswersCount"
+        resultTextView.text =  "$correctAnswersCount"
         val transition = Slide(Gravity.RIGHT)
         transition.duration = resources.getInteger(android.R.integer.config_longAnimTime).toLong()
         enterTransition = transition
         exitTransition = transition
 
     }
-
-
 }

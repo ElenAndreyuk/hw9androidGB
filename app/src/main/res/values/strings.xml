@@ -1,48 +1,45 @@
 <resources>
     <string name="app_name">quizz By GB</string>
     <string name="header">Quizz!</string>
-    <string name="buttonNext">Начать</string>
+    <string name="birthday_date">Enter your date of birth</string>
+    <string name="title_enter_date_birth">Enter your date of birth</string>
 
-    <string name="headerQuestions">Опрос</string>
+    <string name="buttonNext">Start</string>
 
-    <string name="question1">Сколько раз в день нужно чистить зубы?</string>
+    <string name="headerQuestions">Survey</string>
+
+    <string name="question1">How many times a day should you brush your teeth?</string>
     <string name="answer1question1">1</string>
     <string name="answer2question1">2</string>
     <string name="answer3question1">5</string>
 
-    <string name="question2">С какого возраста нужно начинать детям чистить зубы?</string>
-    <string name="answer1question2">с 1 года</string>
-    <string name="answer2question2">с 2 лет</string>
-    <string name="answer3question2">с момента прорезывания первого зуба</string>
+    <string name="question2">At what age should children start brushing their teeth?</string>
+    <string name="answer1question2">from 1 year</string>
+    <string name="answer2question2">from 2 years</string>
+    <string name="answer3question2">from the moment the first tooth erupts</string>
 
-    <string name="question3">С какой частотой нужно менять зубную щетку?</string>
-    <string name="answer1question3">1 раз в 2 месяца</string>
-    <string name="answer2question3">1 раз в 4 месяца</string>
-    <string name="answer3question3">по мере износа щетины</string>
+    <string name="question3">How often should you change your toothbrush?</string>
+    <string name="answer1question3">Once every 2 months</string>
+    <string name="answer2question3">Once every 4 months</string>
+    <string name="answer3question3">as the bristles wear out</string>
 
-    <string name="question4">Нужно ли лечить молочные зубы?</string>
-    <string name="answer1question4">да</string>
-    <string name="answer2question4">нет</string>
+    <string name="question4">Do baby teeth need to be treated?</string>
+    <string name="answer1question4">Yes</string>
+    <string name="answer2question4">No</string>
 
-    <string name="question5">Всегда ли нужно удалять зубы мудрости?</string>
-    <string name="answer1question5">да</string>
-    <string name="answer2question5">нет</string>
+    <string name="question5">Do you always need to remove wisdom teeth?</string>
+    <string name="answer1question5">Yes</string>
+    <string name="answer2question5">No</string>
 
-    <string name="back">Назад</string>
+    <string name="back">Back</string>
 
-    <string name="send">Отправить</string>
-    <string name="result">Результат:</string>
-    <string name="startAgain">Начать заново</string>
+    <string name="send">Send</string>
+    <string name="result">Result:</string>
+    <string name="quantity_of_correct_answers">Quantity of correct answers: </string>
+
+    <string name="startAgain">Start again</string>
 
 
-    <!-- TODO: Remove or change this placeholder text -->
-        <string name="title_activity_navigation">NavigationActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="start_fragment_label">Start Fragment</string>
-    <string name="questions_fragment_label">Questions Fragment</string>
-    <string name="result_fragment_label">Results Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
 
 </resources>
